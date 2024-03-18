@@ -22,12 +22,19 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = ["pandas==2.2"]
 
 [project.urls]
 Documentation = "https://github.com/unknown/hatch-demo#readme"
 Issues = "https://github.com/unknown/hatch-demo/issues"
 Source = "https://github.com/unknown/hatch-demo"
+
+[tool.hatch.envs.playground]
+dependencies = ["scikit-learn==1.4.0"]
+
+
+[tool.hatch.envs.playground.scripts]
+dev = ["python src/playground/demo.py"]
 
 [tool.hatch.version]
 path = "src/hatch_demo/__about__.py"
